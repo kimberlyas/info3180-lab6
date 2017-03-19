@@ -19,19 +19,26 @@
     <div class="main" ng-controller="myCtrl">
       <div class="container">
 
-        <ul>
-          <li ng-repeat="product in products">{{ product }} <span ng-click="removeItem($index)">&times;</span></li>
+        <ul class="list-group">
+          <li ng-repeat="product in products" class="list-group-item">{{ product }} 
+            </span><span ng-click="removeItem($index)" class="badge" style="cursor:pointer">x</span>
+          </li>
         </ul>
-        <input ng-model="addMe">
-        <button ng-click="addItem()">Add</button>
-        <p>{{ errortext }}</p>
-
+        <div class="col-lg-6">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter item name" ng-model="addMe">
+            <span class="input-group-btn">
+              <button ng-click="addItem()" class="btn btn-success" type="button">Add</button>
+            </span>
+          </div>
+          <p style="color:red">{{ errortext }}</p>
+        </div>
       </div>
     </div>
 
     <div class="footer">
       <div class="container">
-        <h2>Built using AngularJS. Copyright &copy 2017.</h2>
+        <h2>Copyright &copy; 2017.</h2>
         <img src="img/angular_js.jpg" width="120px" />
       </div>
     </div>
